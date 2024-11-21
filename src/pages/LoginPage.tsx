@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { } from 'react';
+import { } from 'react-router-dom'; // Para redirigir después de iniciar sesión
+
+import '../styles/LoginPage.css';
 
 const LoginPage: React.FC = () => {
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Iniciar sesión');
   };
 
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin} style={{ display: 'inline-block', textAlign: 'left' }}>
-        <div>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2>Iniciar Sesión</h2>
+        <div className="input-group">
           <label htmlFor="username">Usuario</label>
-          <input id="username" type="text" placeholder="Ingrese su usuario" required />
+          <input type="text" id="username" placeholder="Ingrese su usuario" required />
         </div>
-        <div>
+        <div className="input-group">
           <label htmlFor="password">Contraseña</label>
-          <input id="password" type="password" placeholder="Ingrese su contraseña" required />
+          <input type="password" id="password" placeholder="Ingrese su contraseña" required />
         </div>
         <button type="submit">Ingresar</button>
       </form>

@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 1rem;
+    color: white;
+  }
+  
+  nav h1 {
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,20 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GlobalStyles from './styles/GlobalStyles';
+import { Outlet } from 'react-router-dom'; // Permite renderizar rutas hijas
 import Navbar from './components/Navbar';
-import MainPage from './pages/MainPage';
-import LoginPage from '../src/pages/LoginPage';
+import Footer from './components/Footer';
+import './App.css';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <GlobalStyles />
+    <div className="app-container">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-    </Router>
+      <main className="main-content">
+        <Outlet /> {/* Aquí se renderizarán las rutas hijas definidas en main.tsx */}
+      </main>
+      <Footer />
+    </div>
   );
 };
 
